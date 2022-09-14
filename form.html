@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Form</title>
+</head>
+
+<!-- Navbar menu -->
+<nav class="bg-purple-600 p-2 text-white ">
+    <div class="flex justify-between ">
+        <div class="logo m-2"><a href="#">LICT</a></div>
+        <div class="menu-btn block">
+            <ul class="flex">
+                <li class="m-2 relative"><a class="p-2 rounded" href="index.html">Home</a></li>
+                <li class="m-2 relative"><a class="p-2 rounded" href="#">Contact</a></li>
+                <li class="students m-2 relative"><a class="p-2 rounded" href="#">Students</a>
+                    <ul class="submenu w-10 px-3 my-2 w-full students px-3 bg-purple-600 left-0 absolute">
+                        <li class="w-full"><a href="#" class=" rounded">CSIT A</a></li>
+                        <li><a href="studentsDetails.html" class="rounded">CSIT B</a></li>
+                    </ul>
+                </li> 
+                <li class="mx-2 bg-green-800 p-3 rounded-b-full relative"><a class="p-2 rounded-t-full" href="form.html">Log-in</a></li>
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+<!-- Form -->
+    <div>
+    <div class="w-3/12 sm:max-w-6/12 sm:my-2 mt-5 my-20 bg-white mx-auto p-8 rounded-lg">
+        <h1 class="text-2xl text-center font-bold">Login</h1>
+    <form action="">
+        <div class="mt-5">
+            <label for="username">Username</label>
+            <input type="text" class="w-full bg-gray-100 rounded-lg p-4" name="" id="username" placeholder="Enter Username" required>
+        </div>
+        <div class="mt-5">
+            <label for="password">Password</label>
+            <input type="password" class="w-full bg-gray-100 rounded-lg p-4" name="" id="password" placeholder="Enter Password" required>
+        </div>
+        <div class="mt-5 text-center">
+            <button type="submit" onclick="getUsernameAndPass()" class="bg-blue-500 rounded-lg px-4 py-3 text-white">Submit</button>
+            <a href="index.html" class="bg-red-500 rounded-lg px-4 py-3 text-white">Cancel</a>
+        </div>
+        <div class="mt-5 text-blue-400 text-center"><a href="#" onclick="forgotPass()">Forgot password?</a></div>
+    </form>
+    </div>
+    </div>
+
+
+    <script>
+
+
+        function forgotPass(){
+            alert("Check your email for new password");
+            return false;
+        }
+        
+        function getUsernameAndPass(){
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        if(username == '' && password == ''){
+            alert("username and password cannot be empty");
+        }
+        else if(username == password){
+            alert("Username and Password cannot be same");
+        }
+        return false;
+        }
+    </script>
+</body>
+</html>
